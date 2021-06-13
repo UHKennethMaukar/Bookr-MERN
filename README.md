@@ -9,11 +9,12 @@ Note: Backend api routes are on port 5000.
 ## Project Summary
 
 Bookr is a book catalog built on the MERN stack utilizing the REST API framework.
-It currently features 2 main views
-1) The catalog featuring all books + search by title feature
+It currently features 2 main views + 2 secondary views for ADD & EDIT/DELETE books
+1) The catalog featuring all books + search bar
 2) A specific book's page to view its details
 
 ### WIP & Future implementations
 1) Sort by year/title features
-2) Add/Edit/Delete Functionality (with User Auth) 
+2) Admin access (user auth) with exclusive ADD/EDIT/DEL privileges
+3) Action notification & confirmation
 
