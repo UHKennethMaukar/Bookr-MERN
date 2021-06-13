@@ -36,11 +36,10 @@ export default class BookCatalog extends Component {
         console.log("Book: " + books);
         let bookCatalog;
         let filteredBooks = this.state.books.filter(
-            (book) => { // Search only works with book titles for now
+            (book) => {
                 return book.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
-            } // toLowerCase so as to avoid search being case sensitive
+            }
         );
-        // To-do: Search/filter & sort by year/title etc.
 
         if(!books) {
             bookCatalog = "No books added yet.";

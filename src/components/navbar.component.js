@@ -11,6 +11,9 @@ export default class Navbar extends Component {
             <div className="collpase navbar-collapse">
                 <ul class="navbar-nav me-auto">
                 </ul>
+                <a class="btn btn-outline-warning float-end" type="button" href="/add">
+                    + Add a Book
+                </a>
             </div>
         </div>
       </nav>

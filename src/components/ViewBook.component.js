@@ -59,6 +59,16 @@ export default class ViewBook extends Component {
             <div>
               { BookEntry }
             </div>
+  
+            <div className="row">
+              <div className="col-md-6">
+                <Link to={`/edit/${book._id}`} className="btn btn-outline-info">
+                      Edit Book
+                </Link>
+                <br />
+              </div>
+              
+            </div>
           </div>
         </div>
       );

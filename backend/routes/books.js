@@ -13,11 +13,13 @@ router.route('/add').post((req, res) => {
   const title = req.body.title;
   const year = Number(req.body.year);
   const description = req.body.description;
+  const imageURL = (req.body.imageURL || 'https://leadershiftinsights.com/wp-content/uploads/2019/07/no-book-cover-available.jpg');
 
   const newBook = new Book({
     title,
     year,
     description,
+    imageURL
   });
 
   newBook.save()
@@ -25,7 +27,7 @@ router.route('/add').post((req, res) => {
   .catch(err => res.status(400).json('Error: ' + err));
 });
 
-// GET specific book
+// GET specific
 router.route('/:id').get((req, res) => {
   Book.findById(req.params.id)
     .then(book => res.json(book))
@@ -46,6 +48,7 @@ router.route('/edit/:id').post((req, res) => {
       book.title = req.body.title;
       book.year = Number(req.body.year);
       book.description = req.body.description;
+      book.imageURL = (req.body.imageURL || 'https://leadershiftinsights.com/wp-content/uploads/2019/07/no-book-cover-available.jpg');
 
       book.save()
         .then(() => res.json('Book editted.'))
