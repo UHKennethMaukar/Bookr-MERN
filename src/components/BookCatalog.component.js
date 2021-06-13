@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 
-import BookEntry from './BookEntry.component'; // Books will be fetched & mapped from BookEntry component
+
+import BookEntry from './BookEntry.component';
 
 export default class BookCatalog extends Component {
     constructor(props) {
@@ -34,11 +35,17 @@ export default class BookCatalog extends Component {
         const books = this.state.books;
         console.log("Book: " + books);
         let bookCatalog;
+        let filteredBooks = this.state.books.filter(
+            (book) => { // Search only works with book titles for now
+                return book.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+            } // toLowerCase so as to avoid search being case sensitive
+        );
+        // To-do: Search/filter & sort by year/title etc.
 
         if(!books) {
             bookCatalog = "No books added yet.";
         } else {
-            bookCatalog = books.map((book, k) =>
+            bookCatalog = filteredBooks.map((book, k) =>
                 <BookEntry book = {book} key = {k} />
                 );
         }
@@ -46,6 +53,16 @@ export default class BookCatalog extends Component {
         return (
             <div className="BookCatalog">
                 <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <br />
+                            <input className="form-control mr-sm-2" type="text" placeholder="Search by Title" 
+                                value={this.state.search} 
+                                onChange={this.updateSearch.bind(this)}/>
+                            <hr />
+                        </div>    
+                    </div>
+
                     <div className="catalog">
                         {bookCatalog}
                     </div>
