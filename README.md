@@ -1,8 +1,8 @@
 # Launch Instructions:
 
-Connect to Frontend: on project directory, `npm start`, app should start on: [http://localhost:3000] 
-Connect to Backend: cd to 'backend' and run `node server` or `nodemon server`. 
-Notes: Backend api routes are on port: 5000. DB is hosted on MongoDB Atlas containing a couple of books.
+Connect to Frontend: on project directory,`npm install`, then `npm start`; app should start on: [http://localhost:3000] 
+Connect to Backend: cd to 'backend' and run `node server` or `nodemon server`. This will also load the current DB of books hosted on MongoDB Atlas.
+Notes: Backend api routes are on port: 5000.
 
 ## Project Summary
 
