@@ -13,8 +13,8 @@ const BookEntry = (props) => {
                         { book.title }
                     </Link>
                 </h2>
+                <img src={ book.imageURL } className="cover" alt="Book cover"/>
                 <h3 className="display-3 text-center">{ book.year }</h3>
-                <p>{ book.description }</p>
             </div>
         </div>
     )

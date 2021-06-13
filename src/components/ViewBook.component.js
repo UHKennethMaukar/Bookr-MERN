@@ -28,6 +28,10 @@ export default class ViewBook extends Component {
     render() {
         const book = this.state.book;
         let BookEntry = <div>
+            <p className="aligncenter">
+                <img src={ book.imageURL } className="cover" alt="Book cover"/>
+            </p>
+            
             <table className = "table table-hover table-dark">
                 <tbody>
                     <tr>
