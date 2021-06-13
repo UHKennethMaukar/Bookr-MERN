@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route } from "react-router-dom"; // Routes URLs directly to React components
-import "bootstrap/dist/css/bootstrap.slate.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
 
 import Navbar from "./components/navbar.component";
